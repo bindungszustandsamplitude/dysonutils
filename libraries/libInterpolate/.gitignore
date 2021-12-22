@@ -1,0 +1,4 @@
+.*.swp
+*.o
+int
+build

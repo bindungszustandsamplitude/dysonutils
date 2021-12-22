@@ -1,0 +1,1537 @@
+sv1 = sv1_q1;
+ss1 = ss1_q1;
+sv2 = sv2_q1;
+ss2 = ss2_q1;
+sv3 = sv3_q2;
+ss3 = ss3_q2;
+sv4 = sv4_q2;
+ss4 = ss4_q2;
+
+w.resize(10000,0.);
+
+
+if(isud){FCtr  = 4.*2.;}
+if(!isud){FCtr  = 4.*2.;}
+
+if(quark_1.getMass() == 0.0037){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_0037_0037(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0037(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0037(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_0037_0037(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0037(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0037(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_0037_0037(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0037(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0037(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_0037_0037(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0037(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0037(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.0200){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_0200_0200(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0200(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0200(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_0200_0200(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0200(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0200(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_0200_0200(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0200(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0200(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_0200_0200(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0200(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0200(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.0500){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_0500_0500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0500(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_0500_0500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0500(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_0500_0500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0500(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_0500_0500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0500(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.0855){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_0855_0855(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0855(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0855(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_0855_0855(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0855(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0855(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_0855_0855(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0855(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0855(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_0855_0855(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_0855(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_0855(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.1500){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_1500_1500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_1500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_1500(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_1500_1500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_1500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_1500(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_1500_1500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_1500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_1500(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_1500_1500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_1500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_1500(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.2100){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_2100_2100(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_2100(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_2100(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_2100_2100(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_2100(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_2100(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_2100_2100(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_2100(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_2100(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_2100_2100(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_2100(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_2100(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.3500){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_3500_3500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_3500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_3500(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_3500_3500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_3500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_3500(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_3500_3500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_3500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_3500(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_3500_3500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_3500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_3500(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.5000){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_5000_5000(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_5000(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_5000(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_5000_5000(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_5000(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_5000(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_5000_5000(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_5000(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_5000(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_5000_5000(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_5000(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_5000(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.6500){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_6500_6500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_6500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_6500(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_6500_6500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_6500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_6500(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_6500_6500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_6500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_6500(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_6500_6500(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_6500(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_6500(0,std::real(l_l+q_l+0.25*q_q)));
+}
+else
+if(quark_1.getMass() == 0.7950){
+ampl01 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_7950(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_7950(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_7950(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_7950(0,std::real(l_l+q_l+0.25*q_q)));
+ampl10 = 0.25*(
+ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_7950(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_7950(0,std::real(l_l+q_l+0.25*q_q))+
+ns_data_v2::amplitudes::diquark::axialvector::fit::m_7950_7950(0,std::real(l_l+p_l+0.25*p_p))
+*ns_data_v2::amplitudes::meson::pseudoscalar::fit::m_7950_7950(0,std::real(l_l+2.*p_l+q_l+p_p+p_q+0.25*q_q))
+*ns_data_v2::amplitudes::diquark::scalar::fit::m_7950_7950(0,std::real(l_l+p_l+2.*q_l+0.25*p_p+p_q+q_q))
+*ns_data_v2::amplitudes::meson::vector::fit::m_7950_7950(0,std::real(l_l+q_l+0.25*q_q)));
+}
+
+
+    w[1]=1./(-Q_Q*Q_p*p_p+pow(Q_p,3));
+    w[2]=Q_Q;
+    w[3]=Q_p;
+    w[4]=Q_l;
+    w[5]=pow(p_p,-1);
+    w[6]=p_q;
+    w[7]=q_q;
+    w[8]=q_l;
+    w[9]=Q_q;
+    w[10]=p_l;
+    w[11]=p_p;
+    w[12]=l_l;
+    w[13]=1./(Q_Q*pow(p_p,2)-pow(Q_p,2)*p_p);
+    w[14]=1./(3.E+0*Q_Q*pow(p_p,3)-3.E+0*pow(Q_p,2)*pow(p_p,2));
+   w[15]=sv4*sv2;
+   w[16]=w[15]*ss1;
+   w[17]=w[16]*ss3;
+   w[18]=ss1*sv4*sv3;
+   w[19]=w[18]*ss2;
+   w[20]=w[17]-w[19];
+   w[21]=sv1*sv3;
+   w[15]=w[15]*w[21];
+   w[22]=w[15]*w[12];
+   w[23]=ss1*ss4;
+   w[24]=w[23]*sv3*sv2;
+   w[25]=w[22]+w[24];
+   w[26]=w[20]-w[25];
+   w[27]=2.E+0*w[26];
+   w[28]=w[15]*w[8];
+   w[29]=4.E+0*w[28];
+   w[30]=w[15]*w[4];
+   w[31]=w[29]+w[30];
+   w[32]=w[27]-w[31];
+   w[33]=2.E+0*w[15];
+   w[34]=w[33]*w[9];
+   w[35]=w[15]*w[2];
+   w[36]=w[34]+2.E+0*w[32]+7.5E-1*w[35];
+   w[36]=w[36]*w[6];
+   w[21]=w[21]*ss4;
+   w[37]=w[21]*ss2;
+   w[38]=w[37]+w[24];
+   w[39]=4.E+0*w[22];
+   w[40]=sv4*sv1;
+   w[41]=w[40]*ss2;
+   w[42]=w[41]+w[16];
+   w[43]=w[42]*ss3;
+   w[44]=w[43]+w[38]+w[39];
+   w[45]=w[15]*w[10];
+   w[46]=8.E+0*w[45];
+   w[47]=w[46]+w[44];
+   w[48]=w[47]*w[9];
+   w[49]=ss4*sv1*sv2;
+   w[50]=w[16]-w[49];
+   w[51]=-w[50]*ss3;
+   w[52]=w[15]*w[7];
+   w[53]=w[51]-w[52];
+   w[54]=2.E+0*w[25];
+   w[55]=w[21]-w[18];
+   w[56]=-w[55]*ss2;
+   w[57]=w[54]+w[56];
+   w[58]=w[53]+w[57];
+   w[59]=w[58]+w[29];
+   w[60]=w[59]*w[10];
+   w[61]=-w[21]+2.E+0*w[18];
+   w[61]=w[61]*ss2;
+   w[62]=2.E+0*w[22];
+   w[63]=w[62]+w[24];
+   w[61]=w[61]+w[63];
+   w[64]=w[41]-w[16];
+   w[64]=w[64]*ss3;
+   w[65]=w[61]-w[64];
+   w[66]=w[65]-w[30];
+   w[67]=w[66]*w[8];
+   w[68]=w[19]+w[22];
+   w[69]=w[68]*w[7];
+   w[70]=2.E+0*w[69];
+   w[60]=-w[70]+w[60]-w[67];
+   w[71]=w[15]*w[9];
+   w[72]=w[71]-w[29];
+   w[73]=w[72]*w[11];
+   w[36]=-w[73]-w[36]-w[48]+4.E+0*w[60];
+   w[48]=w[52]+w[28];
+   w[73]=3.E+0*w[45];
+   w[74]=w[73]-w[48];
+   w[75]=5.E-1*w[2];
+   w[76]=w[74]*w[75];
+   w[76]=w[76]-w[36];
+   w[76]=w[76]*w[6];
+   w[77]=w[29]-w[30];
+   w[18]=w[18]+w[21];
+   w[18]=w[18]*ss2;
+   w[21]=w[18]-w[52];
+   w[78]=w[33]*w[10];
+   w[79]=w[21]+w[78];
+   w[16]=w[49]+w[16];
+   w[80]=w[16]*ss3;
+   w[81]=w[79]-w[80]-w[77];
+   w[82]=5.E-1*w[71];
+   w[83]=w[81]+w[82];
+   w[83]=w[83]*w[9];
+   w[84]=w[51]+w[52];
+   w[85]=w[84]+w[57];
+   w[33]=w[33]*w[8];
+   w[86]=w[85]+w[33];
+   w[87]=2.E+0*w[8];
+   w[86]=w[86]*w[87];
+   w[88]=w[27]*w[7];
+   w[89]=w[30]*w[7];
+   w[88]=w[88]-w[89];
+   w[90]=w[78]*w[7];
+   w[86]=w[86]-w[88]+w[90];
+   w[83]=w[83]+2.E+0*w[86];
+   w[91]=5.E-1*w[52];
+   w[92]=w[91]+w[28];
+   w[93]=w[92]*w[2];
+   w[94]=-w[83]+1.5E+0*w[93];
+   w[94]=w[94]*w[11];
+   w[95]=w[49]-w[41];
+   w[95]=w[95]*ss3;
+   w[96]=w[95]+w[52];
+   w[97]=w[37]+w[22];
+   w[98]=w[96]-w[97];
+   w[99]=4.E+0*w[45];
+   w[100]=-w[99]+2.E+0*w[98];
+   w[77]=w[100]+w[77];
+   w[101]=w[77]*w[10];
+   w[102]=w[35]*w[10];
+   w[103]=1.25E-1*w[102];
+   w[104]=w[45]*w[9];
+   w[101]=-w[104]+w[101]-w[103];
+   w[101]=w[101]*w[9];
+   w[105]=w[61]+w[64];
+   w[106]=w[105]*w[7];
+   w[56]=w[56]+w[25];
+   w[56]=-w[30]+2.E+0*w[56];
+   w[107]=w[56]*w[8];
+   w[108]=w[107]+w[106]+w[90];
+   w[109]=4.E+0*w[10];
+   w[110]=w[108]*w[109];
+   w[111]=w[2]*w[10];
+   w[112]=w[111]*w[48];
+   w[101]=w[101]-w[110]+1.5E+0*w[112];
+   w[76]=-w[94]+w[76]-w[101];
+   w[76]=w[76]*w[6];
+   w[94]=w[18]+w[24];
+   w[110]=5.E-1*w[30];
+   w[113]=w[94]+w[110];
+   w[114]=3.E+0*w[22];
+   w[115]=w[113]+w[114];
+   w[116]=3.125E-2*w[35];
+   w[117]=w[116]-w[28];
+   w[115]=-w[117]+5.E-1*w[115];
+   w[118]=w[115]+w[45];
+   w[118]=w[118]*w[9];
+   w[119]=w[97]+w[52];
+   w[120]=w[119]+w[95];
+   w[120]=2.E+0*w[120];
+   w[121]=w[120]+w[31];
+   w[121]=w[121]*w[8];
+   w[122]=w[48]*w[109];
+   w[123]=w[122]-w[89];
+   w[121]=w[121]-w[123];
+   w[124]=w[33]+w[52];
+   w[125]=w[124]*w[11];
+   w[126]=w[18]+w[52];
+   w[127]=w[126]-w[80];
+   w[128]=w[127]+w[30];
+   w[129]=w[128]+w[71];
+   w[130]=w[129]*w[6];
+   w[131]=w[43]-w[38];
+   w[132]=w[131]*w[7];
+   w[133]=1.25E-1*w[35];
+   w[134]=w[133]*w[8];
+   w[135]=w[132]-w[134];
+   w[118]=w[118]+w[135]+w[130]+w[125]-w[121];
+   w[118]=w[118]*w[6];
+   w[125]=w[3]*w[6];
+   w[130]=w[125]*w[92];
+   w[118]=w[118]-w[130];
+   w[118]=w[118]*w[3];
+   w[130]=pow(w[6],2);
+   w[136]=w[130]*w[3];
+   w[137]=w[115]*w[136];
+   w[138]=w[33]+w[30];
+   w[139]=2.E+0*w[97];
+   w[140]=w[139]+w[138];
+   w[141]=2.E+0*w[10];
+   w[142]=w[140]*w[141];
+   w[104]=w[104]+2.5E-1*w[102];
+   w[142]=w[142]+w[104];
+   w[63]=w[63]+w[37];
+   w[63]=2.E+0*w[63];
+   w[143]=w[63]+w[31];
+   w[144]=w[143]*w[6];
+   w[145]=w[144]+w[142];
+   w[146]=w[145]*w[130];
+   w[137]=w[137]-w[146];
+   w[137]=w[137]*w[3];
+   w[147]=5.E-1*w[35];
+   w[148]=-w[147]+8.E+0*w[68];
+   w[149]=w[148]*w[6];
+   w[150]=2.E+0*w[61];
+   w[151]=w[150]-w[30];
+   w[151]=w[151]*w[141];
+   w[151]=w[151]-w[102];
+   w[152]=w[78]*w[9];
+   w[152]=w[152]-w[151];
+   w[149]=-w[149]+2.E+0*w[152];
+   w[153]=w[149]*w[6];
+   w[154]=pow(w[10],2);
+   w[155]=w[56]*w[154];
+   w[156]=4.E+0*w[15];
+   w[156]=w[9]*w[154]*w[156];
+   w[157]=w[154]*w[35];
+   w[156]=-w[156]-1.5E+0*w[157]+4.E+0*w[155];
+   w[153]=w[153]-w[156];
+   w[153]=w[153]*w[130];
+   w[137]=w[137]+w[153];
+   w[153]=w[137]*w[5];
+   w[76]=w[76]-w[118]+w[153];
+   w[76]=w[76]*w[13];
+   w[158]=w[57]-w[30];
+   w[159]=w[53]+w[158]+w[33];
+   w[159]=w[159]*w[141];
+   w[55]=ss2*w[12]*w[55];
+   w[160]=w[15]*pow(w[12],2);
+   w[161]=w[24]*w[12];
+   w[55]=w[55]-w[160]-w[161];
+   w[50]=-w[12]*w[50];
+   w[40]=w[40]*w[12];
+   w[23]=w[40]+w[23];
+   w[23]=w[23]*ss2;
+   w[23]=w[23]+w[50];
+   w[23]=w[23]*ss3;
+   w[40]=w[55]-w[23];
+   w[50]=w[40]+w[69];
+   w[160]=2.E+0*w[50];
+   w[161]=w[64]+w[30];
+   w[162]=4.E+0*w[8];
+   w[161]=w[161]*w[162];
+   w[163]=w[52]-w[22];
+   w[164]=w[42]-w[49];
+   w[164]=w[164]*ss3;
+   w[164]=w[164]-w[163];
+   w[164]=w[164]*w[4];
+   w[159]=w[161]+w[159]-w[160]-w[164];
+   w[42]=w[42]+w[49];
+   w[42]=w[42]*ss3;
+   w[49]=w[113]-w[42];
+   w[113]=w[49]+w[52];
+   w[161]=w[116]+w[45];
+   w[165]=-w[161]+5.E-1*w[113];
+   w[165]=w[165]*w[75];
+   w[166]=w[43]+w[62];
+   w[73]=w[73]+w[166];
+   w[167]=2.E+0*w[9];
+   w[73]=w[73]*w[167];
+   w[73]=-w[73]+w[165]+2.E+0*w[159];
+   w[73]=w[73]*w[9];
+   w[159]=w[45]+w[26]-w[33];
+   w[168]=2.5E-1*w[35];
+   w[169]=w[34]+w[168];
+   w[159]=w[169]+4.E+0*w[159];
+   w[159]=w[159]*w[9];
+   w[170]=w[45]+w[28];
+   w[170]=w[170]*w[2];
+   w[171]=w[162]*w[30];
+   w[170]=w[170]-w[171];
+   w[172]=-w[35]+4.E+0*w[30];
+   w[173]=w[172]*w[6];
+   w[159]=w[159]-w[173]+2.E+0*w[170];
+   w[159]=w[159]*w[6];
+   w[170]=w[110]-w[29];
+   w[174]=w[120]-w[170];
+   w[175]=w[174]*w[8];
+   w[176]=w[110]*w[7];
+   w[135]=-w[90]-w[176]+w[175]-w[135];
+   w[135]=w[135]*w[2];
+   w[175]=w[54]-w[30];
+   w[177]=w[175]+w[29];
+   w[177]=-w[169]+2.E+0*w[177];
+   w[177]=w[177]*w[9];
+   w[178]=w[124]*w[2];
+   w[179]=-w[178]+4.E+0*w[89];
+   w[177]=w[177]-w[179];
+   w[177]=w[177]*w[11];
+   w[106]=w[106]*w[4];
+   w[180]=w[56]*w[4];
+   w[181]=w[180]*w[8];
+   w[182]=w[89]*w[141];
+   w[106]=w[181]+w[182]+w[106];
+   w[73]=w[159]-w[73]-w[177]+w[135]+4.E+0*w[106];
+   w[73]=w[73]*w[6];
+   w[106]=w[158]+w[84];
+   w[135]=w[106]+w[33];
+   w[159]=w[135]*w[8];
+   w[177]=w[26]*w[7];
+   w[159]=w[177]-w[159];
+   w[175]=w[175]+w[33];
+   w[175]=-w[169]+2.E+0*w[175];
+   w[177]=w[175]*w[6];
+   w[182]=3.E+0*w[28];
+   w[183]=w[182]+w[52];
+   w[183]=w[183]*w[167];
+   w[184]=w[92]*w[75];
+   w[159]=w[183]-w[177]+w[184]+4.E+0*w[159];
+   w[159]=w[159]*w[125];
+   w[73]=w[73]-w[159];
+   w[159]=w[131]+w[110];
+   w[159]=w[159]*w[2];
+   w[177]=w[148]*w[9];
+   w[183]=4.E+0*w[4];
+   w[184]=w[183]*w[105];
+   w[159]=w[159]-w[177]-w[184];
+   w[177]=w[159]*w[6];
+   w[184]=2.E+0*w[30];
+   w[185]=w[184]-w[65];
+   w[185]=w[185]*w[109];
+   w[186]=w[99]*w[9];
+   w[187]=5.E-1*w[102];
+   w[185]=w[185]+w[186]+w[187];
+   w[185]=w[185]*w[9];
+   w[174]=w[174]*w[10];
+   w[174]=w[174]+w[103];
+   w[174]=w[174]*w[2];
+   w[186]=w[180]*w[109];
+   w[174]=w[185]-w[174]-w[186];
+   w[177]=w[177]+w[174];
+   w[177]=w[177]*w[130];
+   w[185]=w[69]-w[40];
+   w[188]=w[87]*w[105];
+   w[164]=w[164]-w[188]-2.E+0*w[185];
+   w[49]=w[49]-w[52];
+   w[116]=w[116]+w[28];
+   w[49]=-w[116]+5.E-1*w[49];
+   w[49]=w[49]*w[75];
+   w[166]=w[166]+w[33];
+   w[166]=w[166]*w[167];
+   w[49]=w[166]-w[49]+2.E+0*w[164];
+   w[164]=w[49]*w[136];
+   w[164]=w[177]-w[164];
+   w[166]=w[164]*w[5];
+   w[177]=w[73]+w[166];
+   w[177]=w[177]*w[1];
+   w[76]=w[76]+w[177];
+   w[177]=-PM12p*w[76];
+   w[84]=w[158]-w[84];
+   w[188]=w[84]*w[109];
+   w[185]=4.E+0*w[185];
+   w[189]=w[162]*w[105];
+   w[190]=w[17]-w[37];
+   w[190]=2.E+0*w[190];
+   w[191]=w[190]-w[30];
+   w[191]=w[191]*w[4];
+   w[188]=w[185]-w[191]+w[189]-w[188];
+   w[131]=w[131]-w[30];
+   w[189]=w[131]-w[99];
+   w[192]=w[189]*w[9];
+   w[193]=w[192]-w[188];
+   w[194]=w[25]+w[28];
+   w[195]=-w[168]+4.E+0*w[194];
+   w[196]=w[195]-w[71];
+   w[197]=w[196]*w[11];
+   w[198]=w[197]+w[193];
+   w[19]=w[17]+w[19];
+   w[199]=w[114]+w[24]+w[19];
+   w[199]=w[29]+2.E+0*w[199];
+   w[200]=w[199]-w[30];
+   w[201]=-w[169]+2.E+0*w[200];
+   w[202]=w[201]*w[6];
+   w[202]=w[202]+w[198];
+   w[203]=5.E-1*w[42];
+   w[204]=w[203]+w[91];
+   w[161]=w[114]-w[161]+w[204]+w[182]+5.E-1*w[94];
+   w[161]=w[161]*w[75];
+   w[182]=w[202]+w[161];
+   w[182]=w[182]*w[130];
+   w[39]=w[39]+w[80];
+   w[126]=w[39]+w[126];
+   w[205]=w[126]+w[29];
+   w[206]=w[205]*w[136];
+   w[153]=w[182]+w[206]-w[153];
+   w[153]=w[153]*w[13];
+   w[126]=-w[78]+w[170]-w[126];
+   w[126]=w[126]*w[2];
+   w[170]=-w[78]+3.E+0*w[30];
+   w[182]=w[170]-w[199];
+   w[182]=w[169]+2.E+0*w[182];
+   w[182]=w[182]*w[9];
+   w[199]=w[183]*w[84];
+   w[126]=-w[199]+w[126]+w[182];
+   w[173]=w[173]+w[126];
+   w[173]=w[173]*w[130];
+   w[182]=w[175]*w[136];
+   w[173]=w[173]-w[182];
+   w[166]=w[173]+w[166];
+   w[166]=w[166]*w[1];
+   w[153]=w[153]-w[166];
+   w[166]=-PM12Lp*w[153];
+   w[166]=w[166]+w[177];
+   w[177]=PM11m*ampl10;
+   w[166]=w[166]*w[177];
+   w[182]=ampl01*PM11p;
+   w[199]=w[182]*PM12m;
+   w[76]=-w[76]*w[199];
+   w[182]=w[182]*PM12Lm;
+   w[153]=-w[153]*w[182];
+   w[76]=w[76]+w[153]+w[166];
+   w[153]=w[22]+1.666666666E-1*w[94];
+   w[166]=1.041666666E-2*w[35];
+   w[207]=w[153]-w[166];
+   w[208]=1.666666666E-1*w[42];
+   w[209]=w[207]+w[208];
+   w[210]=3.333333333E-1*w[28];
+   w[211]=-w[209]+w[210]+w[91]-w[45];
+   w[211]=w[211]*w[75];
+   w[212]=6.666666666E-1*w[71];
+   w[213]=6.666666666E-1*w[32]+w[212]+w[168];
+   w[213]=w[213]*w[6];
+   w[40]=w[69]+3.333333333E-1*w[40];
+   w[214]=3.333333333E-1*w[9];
+   w[215]=w[47]*w[214];
+   w[216]=1.333333333E+0*w[10];
+   w[59]=w[59]*w[216];
+   w[40]=-4.E+0*w[40]-1.333333333E+0*w[67]-3.333333333E-1*w[191]-w[215]+w[59]+w[211]-w[213];
+   w[40]=w[40]*w[6];
+   w[59]=w[97]-w[52];
+   w[33]=2.E+0*w[59]+w[30]+w[78]-w[33];
+   w[33]=w[33]*w[141];
+   w[33]=w[33]+w[104];
+   w[33]=w[33]*w[214];
+   w[67]=w[150]*w[7];
+   w[104]=w[87]*w[56];
+   w[67]=w[67]+w[104]+w[90]-w[89];
+   w[67]=w[67]*w[216];
+   w[90]=w[28]+6.666666666E-1*w[52];
+   w[90]=w[90]*w[111];
+   w[33]=-w[67]+w[90]+w[40]-w[33];
+   w[33]=w[33]*w[6];
+   w[40]=w[138]+2.E+0*w[119];
+   w[40]=w[40]*w[87];
+   w[63]=w[63]*w[7];
+   w[67]=w[168]*w[8];
+   w[40]=w[40]-w[123]+w[63]+w[67];
+   w[63]=w[22]+3.333333333E-1*w[24];
+   w[90]=w[63]+3.333333333E-1*w[18]+1.666666666E-1*w[30];
+   w[104]=-w[90]+2.083333333E-2*w[35];
+   w[111]=3.333333333E-1*w[45];
+   w[123]=w[210]+w[111]-w[104];
+   w[123]=w[123]*w[9];
+   w[150]=3.333333333E-1*w[6];
+   w[129]=w[129]*w[150];
+   w[40]=-w[123]-w[129]+3.333333333E-1*w[40];
+   w[40]=w[40]*w[6];
+   w[92]=w[3]*w[92]*w[150];
+   w[40]=w[40]+w[92];
+   w[40]=w[40]*w[3];
+   w[90]=-w[166]+5.E-1*w[90];
+   w[92]=w[90]+w[210];
+   w[123]=w[92]*w[136];
+   w[123]=-w[123]+3.333333333E-1*w[146];
+   w[123]=w[123]*w[3];
+   w[129]=w[149]*w[150];
+   w[136]=w[71]*w[154];
+   w[136]=w[136]-w[155];
+   w[146]=w[147]*w[154];
+   w[136]=-w[146]-1.333333333E+0*w[136];
+   w[129]=w[129]-w[136];
+   w[146]=w[129]*w[130];
+   w[123]=w[123]-w[146];
+   w[123]=w[123]*w[5];
+   w[33]=w[123]+w[33]-w[40];
+   w[33]=w[33]*w[5];
+   w[40]=w[44]*w[7];
+   w[139]=w[139]+w[30];
+   w[139]=w[139]*w[87];
+   w[67]=w[139]+w[40]+w[67]+w[122];
+   w[90]=w[111]+w[90];
+   w[90]=w[90]*w[9];
+   w[67]=-w[90]+3.333333333E-1*w[67];
+   w[67]=w[67]*w[9];
+   w[90]=1.666666666E-1*w[52];
+   w[139]=-w[166]+w[153]+w[208]-w[90];
+   w[139]=w[7]*w[139];
+   w[146]=3.333333333E-1*w[52];
+   w[153]=w[146]+w[28];
+   w[154]=w[153]*w[8];
+   w[166]=w[52]*w[10];
+   w[139]=w[166]-w[154]+w[139];
+   w[139]=w[139]*w[75];
+   w[154]=w[58]*w[109];
+   w[50]=4.E+0*w[50];
+   w[154]=w[50]-w[154];
+   w[154]=w[7]*w[154];
+   w[65]=w[65]*w[7];
+   w[65]=w[65]-w[89];
+   w[107]=w[65]+w[107];
+   w[208]=w[107]*w[162];
+   w[190]=w[190]*w[7];
+   w[190]=w[190]-w[89];
+   w[190]=w[190]*w[4];
+   w[154]=w[208]+w[190]+w[154];
+   w[67]=w[67]+w[139]+3.333333333E-1*w[154];
+   w[139]=w[48]*w[162];
+   w[88]=w[139]-w[88];
+   w[82]=-w[82]+2.E+0*w[124];
+   w[82]=w[82]*w[214];
+   w[154]=w[196]*w[150];
+   w[190]=w[168]*w[7];
+   w[82]=-w[82]-w[154]-w[190]+6.666666666E-1*w[88];
+   w[82]=w[82]*w[6];
+   w[88]=w[127]*w[7];
+   w[154]=w[28]*w[9];
+   w[88]=-w[89]-w[139]+w[154]-w[88];
+   w[139]=3.333333333E-1*w[3];
+   w[154]=w[88]*w[139];
+   w[208]=w[7]*w[194];
+   w[210]=w[52]*w[9];
+   w[190]=-4.E+0*w[208]+w[210]+w[190];
+   w[190]=3.333333333E-1*w[190];
+   w[208]=w[190]*w[11];
+   w[33]=w[33]-w[82]+w[67]+w[154]+w[208];
+   w[82]=PM12p*w[33];
+   w[84]=w[84]*w[10];
+   w[154]=w[105]*w[8];
+   w[70]=w[70]+w[154]-w[84];
+   w[84]=w[111]-w[153];
+   w[84]=w[84]*w[75];
+   w[154]=w[189]*w[214];
+   w[70]=w[84]-w[154]+1.333333333E+0*w[70];
+   w[84]=1.333333333E+0*w[28];
+   w[189]=3.333333333E-1*w[30];
+   w[208]=w[84]-w[189];
+   w[19]=w[63]+3.333333333E-1*w[19];
+   w[19]=2.E+0*w[19];
+   w[63]=w[208]+w[19];
+   w[63]=-w[212]-8.333333333E-2*w[35]+2.E+0*w[63];
+   w[210]=w[63]*w[6];
+   w[211]=w[70]-w[210];
+   w[211]=w[211]*w[6];
+   w[107]=w[107]*w[216];
+   w[59]=w[95]+w[59];
+   w[59]=w[30]+2.E+0*w[59];
+   w[59]=w[59]*w[10];
+   w[59]=w[59]+w[103];
+   w[59]=w[59]*w[214];
+   w[153]=w[10]*w[153]*w[75];
+   w[59]=w[59]-w[153]+w[107];
+   w[107]=w[211]+w[59];
+   w[107]=w[107]*w[6];
+   w[40]=w[40]+w[134];
+   w[95]=w[119]-w[95];
+   w[95]=2.E+0*w[95];
+   w[119]=w[95]+w[30];
+   w[119]=w[119]*w[8];
+   w[119]=w[119]+w[40];
+   w[134]=5.E-1*w[9];
+   w[104]=w[134]*w[104];
+   w[104]=w[104]+3.333333333E-1*w[119];
+   w[119]=w[205]*w[150];
+   w[119]=w[119]-w[104];
+   w[119]=w[119]*w[125];
+   w[107]=w[107]-w[119]-w[123];
+   w[107]=w[107]*w[5];
+   w[53]=w[53]-w[158];
+   w[119]=6.666666666E-1*w[8];
+   w[53]=w[53]*w[119];
+   w[19]=w[19]*w[7];
+   w[19]=w[53]-w[19]-6.666666666E-1*w[166]+3.333333333E-1*w[89];
+   w[39]=w[79]+w[39];
+   w[39]=w[39]*w[214];
+   w[19]=-w[39]+1.666666666E-1*w[93]+2.E+0*w[19];
+   w[39]=w[72]*w[150];
+   w[39]=w[39]-w[19];
+   w[39]=w[39]*w[6];
+   w[53]=w[124]*w[3];
+   w[79]=w[53]*w[150];
+   w[39]=w[107]+w[39]-w[79];
+   w[107]=PM12Lp*w[39];
+   w[82]=w[107]+w[82];
+   w[82]=w[82]*w[177];
+   w[33]=w[33]*w[199];
+   w[39]=w[39]*w[182];
+   w[33]=w[33]+w[39]+w[82];
+   w[39]=w[28]+w[22];
+   w[82]=6.E+0*w[45];
+   w[107]=w[82]+w[43]+3.5E+0*w[30]+2.E+1*w[39]+9.E+0*w[38];
+   w[107]=w[107]*w[2];
+   w[66]=w[66]*w[4];
+   w[119]=w[141]*w[30];
+   w[66]=w[119]-w[66];
+   w[119]=w[78]-w[30];
+   w[123]=w[119]+2.E+0*w[68];
+   w[134]=-w[147]+4.E+0*w[123];
+   w[153]=w[134]*w[9];
+   w[158]=-w[153]+4.E+0*w[66];
+   w[107]=w[107]-w[158];
+   w[107]=w[107]*w[9];
+   w[211]=w[11]*w[9];
+   w[213]=w[211]*w[172];
+   w[215]=w[6]*w[9];
+   w[216]=w[172]*w[215];
+   w[213]=w[213]+2.E+0*w[216];
+   w[107]=w[107]-w[213];
+   w[107]=w[107]*w[6];
+   w[96]=-w[96]+9.E+0*w[97];
+   w[96]=2.E+0*w[96]+w[99]+1.6E+1*w[28]+7.5E+0*w[30];
+   w[96]=w[96]*w[10];
+   w[96]=w[96]+1.125E+0*w[102];
+   w[96]=w[96]*w[2];
+   w[97]=w[119]+w[105];
+   w[119]=w[97]*w[109];
+   w[217]=w[119]+3.5E+0*w[102];
+   w[217]=w[217]*w[9];
+   w[96]=w[96]+w[217]+w[186];
+   w[96]=w[96]*w[9];
+   w[21]=w[21]-w[80];
+   w[217]=w[110]-w[78];
+   w[218]=-1.E+1*w[28]-w[217]+5.E+0*w[21];
+   w[218]=w[218]*w[2];
+   w[219]=w[85]*w[4];
+   w[87]=w[87]*w[30];
+   w[219]=w[219]+w[87];
+   w[220]=w[26]-w[45];
+   w[221]=w[168]+4.E+0*w[220];
+   w[221]=w[221]*w[9];
+   w[222]=-w[221]+4.E+0*w[219];
+   w[218]=w[218]+w[222];
+   w[218]=w[218]*w[211];
+   w[96]=w[218]+w[96]+w[107];
+   w[96]=w[96]*w[6];
+   w[107]=w[114]+w[94];
+   w[114]=5.E+0*w[107]+2.25E+0*w[30];
+   w[218]=5.E-1*w[45];
+   w[114]=-5.E-1*w[114]+w[218]-5.E+0*w[28]+1.5625E-1*w[35];
+   w[114]=w[114]*w[2];
+   w[85]=w[85]+w[138];
+   w[138]=w[85]*w[109];
+   w[120]=w[120]+w[30];
+   w[120]=w[120]*w[4];
+   w[120]=w[120]-w[138]+w[171];
+   w[131]=w[131]+w[78];
+   w[131]=w[131]*w[9];
+   w[138]=w[120]-w[131];
+   w[114]=w[114]+w[138];
+   w[114]=w[114]*w[9];
+   w[26]=w[26]-w[30];
+   w[34]=w[168]-w[34]+4.E+0*w[26];
+   w[34]=w[34]*w[215];
+   w[171]=w[184]+w[71];
+   w[171]=w[171]*w[211];
+   w[171]=w[171]-w[34];
+   w[114]=w[114]-w[171];
+   w[114]=w[114]*w[6];
+   w[18]=w[80]-w[18];
+   w[80]=w[18]+w[124];
+   w[223]=w[215]*w[3];
+   w[224]=w[80]*w[223];
+   w[114]=w[114]+w[224];
+   w[114]=w[114]*w[3];
+   w[96]=w[96]+w[114];
+   w[96]=w[96]*w[3];
+   w[114]=-w[133]+2.E+0*w[107];
+   w[133]=w[29]+w[114]+w[217];
+   w[133]=w[133]*w[2];
+   w[120]=w[133]-4.E+0*w[120];
+   w[120]=w[120]*w[2];
+   w[133]=4.E+0*w[2];
+   w[225]=w[131]*w[133];
+   w[120]=w[120]+w[225];
+   w[120]=w[120]*w[9];
+   w[184]=w[184]*w[2];
+   w[225]=w[35]*w[9];
+   w[184]=w[184]+w[225];
+   w[226]=4.E+0*w[211];
+   w[184]=w[184]*w[226];
+   w[120]=w[120]+w[184];
+   w[120]=w[120]*w[11];
+   w[68]=-w[35]+1.6E+1*w[68];
+   w[184]=2.E+0*w[2];
+   w[68]=w[68]*w[184];
+   w[226]=w[68]*w[215];
+   w[151]=w[151]*w[2];
+   w[227]=w[167]*w[102];
+   w[151]=w[151]-w[227];
+   w[227]=8.E+0*w[9];
+   w[228]=w[151]*w[227];
+   w[226]=w[226]+w[228];
+   w[26]=w[35]+1.6E+1*w[26];
+   w[26]=w[26]*w[2];
+   w[228]=8.E+0*w[225];
+   w[26]=w[26]-w[228];
+   w[26]=w[26]*w[211];
+   w[26]=w[26]-w[226];
+   w[26]=w[26]*w[6];
+   w[155]=-3.E+0*w[157]+8.E+0*w[155];
+   w[155]=w[155]*w[2];
+   w[157]=w[227]*w[157];
+   w[155]=w[155]-w[157];
+   w[157]=w[155]*w[167];
+   w[26]=w[120]-w[26]+w[157];
+   w[26]=w[26]*w[6];
+   w[26]=w[96]+w[26];
+   w[26]=w[26]*w[3];
+   w[46]=-4.E+0*w[98]+w[46]-w[30];
+   w[46]=w[46]*w[141];
+   w[46]=w[46]+w[187];
+   w[46]=w[46]*w[2];
+   w[96]=w[180]*w[10];
+   w[46]=w[46]+1.6E+1*w[96];
+   w[46]=w[46]*w[2];
+   w[96]=8.E+0*w[10];
+   w[97]=w[97]*w[96];
+   w[97]=w[97]-w[102];
+   w[98]=w[167]*w[2];
+   w[97]=w[97]*w[98];
+   w[46]=w[46]+w[97];
+   w[46]=w[46]*w[9];
+   w[21]=w[99]-w[31]+2.E+0*w[21];
+   w[21]=w[21]*w[2];
+   w[21]=w[21]+8.E+0*w[219];
+   w[21]=w[21]*w[184];
+   w[97]=w[35]+1.6E+1*w[220];
+   w[120]=w[9]*w[2];
+   w[97]=w[97]*w[120];
+   w[21]=w[21]-w[97];
+   w[21]=w[21]*w[211];
+   w[21]=w[46]+w[21];
+   w[21]=w[21]*w[11];
+   w[46]=1.2E+1*w[45]+8.E+0*w[28]-w[30]+2.E+0*w[44];
+   w[46]=w[46]*w[2];
+   w[46]=w[46]-8.E+0*w[66];
+   w[46]=w[46]*w[2];
+   w[97]=-w[35]+8.E+0*w[123];
+   w[97]=w[97]*w[120];
+   w[46]=w[46]+w[97];
+   w[46]=w[46]*w[9];
+   w[97]=w[172]*w[167];
+   w[123]=w[2]*w[97]*w[11];
+   w[46]=w[46]-w[123];
+   w[46]=w[46]*w[11];
+   w[123]=w[133]*w[11];
+   w[180]=w[123]*w[216];
+   w[46]=w[46]-w[180];
+   w[180]=2.E+0*w[6];
+   w[46]=w[46]*w[180];
+   w[21]=w[46]+w[21];
+   w[21]=w[21]*w[6];
+   w[46]=w[115]*w[223];
+   w[142]=w[142]*w[9];
+   w[143]=w[143]*w[215];
+   w[142]=w[142]+w[143];
+   w[180]=w[142]*w[6];
+   w[46]=w[46]-w[180];
+   w[46]=w[46]*w[3];
+   w[180]=w[156]*w[9];
+   w[148]=w[148]*w[215];
+   w[152]=w[152]*w[167];
+   w[148]=w[148]-w[152];
+   w[152]=w[148]*w[6];
+   w[152]=w[180]+w[152];
+   w[152]=w[152]*w[6];
+   w[46]=w[46]-w[152];
+   w[152]=w[5]*w[46]*pow(w[3],3);
+   w[21]=w[26]-w[21]+w[152];
+   w[21]=w[21]*w[14];
+   w[26]=w[95]-w[110];
+   w[26]=w[26]*w[8];
+   w[26]=w[26]+w[40]-w[176]+w[122];
+   w[26]=w[26]*w[2];
+   w[40]=w[58]*w[141];
+   w[16]=w[16]-w[41];
+   w[16]=w[16]*ss3;
+   w[41]=w[16]-w[163];
+   w[41]=w[41]*w[4];
+   w[40]=w[41]-w[40]+w[160];
+   w[40]=-w[165]+2.E+0*w[40];
+   w[40]=w[40]*w[9];
+   w[41]=w[65]*w[4];
+   w[41]=w[41]+w[181];
+   w[26]=w[26]+w[40]+4.E+0*w[41];
+   w[26]=w[26]*w[9];
+   w[40]=w[127]-w[78];
+   w[40]=w[40]*w[9];
+   w[41]=w[30]*w[8];
+   w[41]=w[41]+w[89];
+   w[65]=w[41]-w[166];
+   w[40]=w[53]+w[40]+4.E+0*w[65];
+   w[40]=w[9]*w[40];
+   w[25]=-w[168]+4.E+0*w[25];
+   w[65]=w[25]*w[215];
+   w[65]=w[65]-w[40];
+   w[65]=w[65]*w[3];
+   w[89]=w[58]*w[183];
+   w[95]=w[127]-w[110];
+   w[95]=w[95]*w[2];
+   w[89]=w[95]+w[89];
+   w[89]=w[89]*w[215];
+   w[65]=w[89]+w[65]+w[26];
+   w[89]=w[104]*w[9];
+   w[95]=w[89]*w[3];
+   w[122]=w[59]*w[9];
+   w[50]=w[50]+w[191];
+   w[127]=w[209]-w[90];
+   w[127]=w[127]*w[75];
+   w[50]=w[127]+3.333333333E-1*w[50];
+   w[127]=w[50]*w[215];
+   w[95]=w[122]+w[95]+w[127];
+   w[127]=w[5]*w[3];
+   w[95]=w[95]*w[127];
+   w[65]=-w[95]+3.333333333E-1*w[65];
+   w[65]=w[65]*w[5];
+   w[42]=w[42]+w[52];
+   w[163]=w[42]-w[94];
+   w[116]=w[116]+w[45]+5.E-1*w[163];
+   w[116]=w[116]*w[75];
+   w[135]=w[135]*w[109];
+   w[62]=w[37]+w[17]+w[62];
+   w[62]=-w[110]+2.E+0*w[62];
+   w[62]=w[62]*w[4];
+   w[105]=w[105]-w[30];
+   w[105]=w[105]*w[162];
+   w[62]=w[62]-w[105]+w[116]-w[135]-w[185];
+   w[62]=w[62]*w[2];
+   w[29]=w[29]+w[44];
+   w[44]=-w[30]+w[29]+w[99];
+   w[44]=w[44]*w[2];
+   w[105]=w[61]-w[30];
+   w[105]=w[105]*w[4];
+   w[116]=w[30]*w[10];
+   w[105]=w[105]+w[116];
+   w[44]=w[44]+w[153]+8.E+0*w[105];
+   w[44]=w[44]*w[9];
+   w[105]=pow(w[4],2);
+   w[56]=w[105]*w[56];
+   w[44]=w[62]+w[44]+4.E+0*w[56];
+   w[44]=w[44]*w[9];
+   w[56]=w[27]+w[30];
+   w[56]=w[168]+2.E+0*w[56];
+   w[56]=w[56]*w[2];
+   w[15]=w[105]*w[15];
+   w[15]=w[56]-w[97]-8.E+0*w[15];
+   w[15]=w[15]*w[215];
+   w[56]=w[195]*w[2];
+   w[56]=w[56]-w[225];
+   w[56]=w[56]*w[211];
+   w[15]=w[44]+w[15]-w[56];
+   w[15]=w[15]*w[6];
+   w[27]=w[170]+w[27];
+   w[27]=w[169]+2.E+0*w[27];
+   w[27]=w[27]*w[9];
+   w[44]=w[106]*w[4];
+   w[44]=w[44]+w[87];
+   w[56]=w[217]*w[2];
+   w[27]=w[27]+w[56]-4.E+0*w[44];
+   w[27]=w[27]*w[9];
+   w[27]=w[27]+w[216];
+   w[27]=w[27]*w[6];
+   w[44]=w[175]*w[223];
+   w[27]=w[27]-w[44];
+   w[27]=w[27]*w[3];
+   w[15]=w[15]-w[27];
+   w[27]=w[15]*w[3];
+   w[56]=w[159]*w[215];
+   w[62]=w[174]*w[9];
+   w[56]=w[56]+w[62];
+   w[56]=w[56]*w[6];
+   w[62]=w[49]*w[223];
+   w[56]=w[56]-w[62];
+   w[62]=pow(w[3],2);
+   w[97]=w[62]*w[5];
+   w[105]=w[56]*w[97];
+   w[27]=w[27]+w[105];
+   w[27]=w[27]*w[13];
+   w[54]=w[54]+w[30];
+   w[54]=-w[168]+2.E+0*w[54];
+   w[106]=w[54]*w[9];
+   w[106]=w[106]+w[179];
+   w[116]=w[106]*w[214];
+   w[21]=w[21]+w[65]+w[27]-w[116];
+   w[27]=-PM12p*w[21];
+   w[65]=5.E+0*w[22]+1.5E+0*w[94];
+   w[65]=w[204]+3.E+0*w[65];
+   w[65]=w[30]-w[218]+5.5E+0*w[28]-1.40625E-1*w[35]+5.E-1*w[65];
+   w[65]=w[65]*w[2];
+   w[116]=w[65]+w[193];
+   w[116]=w[116]*w[9];
+   w[135]=w[201]*w[215];
+   w[153]=w[196]*w[211];
+   w[135]=w[153]+w[135];
+   w[116]=w[116]+w[135];
+   w[116]=w[116]*w[6];
+   w[153]=w[205]*w[223];
+   w[116]=w[116]+w[153];
+   w[116]=w[116]*w[3];
+   w[163]=w[205]*w[211];
+   w[143]=w[163]+w[143];
+   w[143]=w[143]*w[133];
+   w[140]=w[96]*w[140];
+   w[140]=w[140]+w[102];
+   w[140]=w[140]*w[2];
+   w[102]=w[102]*w[9];
+   w[102]=4.E+0*w[102];
+   w[140]=w[140]+w[102];
+   w[163]=w[140]*w[9];
+   w[143]=w[143]+w[163];
+   w[143]=w[143]*w[6];
+   w[116]=w[116]-w[143];
+   w[116]=w[116]*w[3];
+   w[39]=-w[78]+w[94]+w[42]-6.25E-2*w[35]+6.E+0*w[39];
+   w[39]=w[39]*w[2];
+   w[39]=w[39]-4.E+0*w[188];
+   w[39]=w[39]*w[2];
+   w[42]=w[192]*w[133];
+   w[39]=w[39]+w[42];
+   w[42]=w[39]*w[9];
+   w[94]=-w[35]+1.6E+1*w[194];
+   w[94]=w[94]*w[2];
+   w[94]=w[94]-4.E+0*w[225];
+   w[143]=w[94]*w[211];
+   w[42]=w[143]+w[42];
+   w[42]=w[42]*w[11];
+   w[143]=-w[35]+8.E+0*w[200];
+   w[143]=w[143]*w[2];
+   w[143]=w[143]-w[228];
+   w[163]=w[143]*w[211];
+   w[163]=w[163]+w[226];
+   w[163]=w[163]*w[6];
+   w[42]=w[157]+w[42]+w[163];
+   w[42]=w[42]*w[6];
+   w[42]=w[116]-w[42];
+   w[42]=w[42]*w[3];
+   w[42]=w[42]-w[152];
+   w[42]=w[42]*w[14];
+   w[116]=w[126]*w[9];
+   w[116]=w[116]+w[216];
+   w[116]=w[116]*w[6];
+   w[44]=w[116]-w[44];
+   w[62]=w[44]*w[62];
+   w[62]=w[62]+w[105];
+   w[62]=w[62]*w[13];
+   w[105]=w[19]*w[9];
+   w[53]=w[53]*w[214];
+   w[53]=w[53]+w[105];
+   w[105]=3.333333333E-1*w[215];
+   w[116]=w[25]*w[105];
+   w[116]=w[116]-w[53];
+   w[116]=w[116]*w[3];
+   w[95]=w[116]+w[95];
+   w[95]=w[95]*w[5];
+   w[42]=w[42]+w[95]-w[62];
+   w[62]=-PM12Lp*w[42];
+   w[27]=w[62]+w[27];
+   w[27]=w[27]*w[177];
+   w[21]=-w[21]*w[199];
+   w[42]=-w[42]*w[182];
+   w[21]=w[21]+w[42]+w[27];
+   w[27]=w[161]+w[193];
+   w[27]=w[27]*w[9];
+   w[27]=w[27]+w[135];
+   w[27]=w[27]*w[6];
+   w[27]=w[27]+w[153];
+   w[27]=w[27]*w[3];
+   w[42]=w[46]*w[127];
+   w[27]=w[27]-w[42];
+   w[27]=w[27]*w[13];
+   w[44]=w[44]*w[3];
+   w[46]=w[56]*w[127];
+   w[44]=w[44]+w[46];
+   w[44]=w[44]*w[1];
+   w[27]=w[27]-w[44];
+   w[44]=-PM12Lp*w[27];
+   w[29]=w[29]-w[110];
+   w[56]=w[29]+w[82];
+   w[56]=w[56]*w[2];
+   w[56]=w[56]-w[158];
+   w[56]=w[56]*w[9];
+   w[56]=w[56]-w[213];
+   w[56]=w[56]*w[6];
+   w[62]=w[80]+w[217];
+   w[62]=w[62]*w[2];
+   w[62]=w[62]-w[222];
+   w[62]=w[62]*w[211];
+   w[82]=w[119]-w[187];
+   w[82]=w[82]*w[9];
+   w[95]=w[110]+w[100];
+   w[95]=w[95]*w[10];
+   w[95]=w[95]-w[103];
+   w[95]=w[95]*w[2];
+   w[82]=w[95]-w[82]-w[186];
+   w[95]=w[82]*w[9];
+   w[56]=w[56]-w[62]-w[95];
+   w[56]=w[56]*w[6];
+   w[62]=w[107]+2.5E-1*w[30];
+   w[62]=-w[218]-w[117]+5.E-1*w[62];
+   w[62]=w[62]*w[2];
+   w[62]=w[62]-w[138];
+   w[62]=w[62]*w[9];
+   w[62]=w[62]+w[171];
+   w[62]=w[62]*w[6];
+   w[62]=w[62]-w[224];
+   w[62]=w[62]*w[3];
+   w[42]=w[62]-w[56]-w[42];
+   w[42]=w[42]*w[13];
+   w[15]=w[15]+w[46];
+   w[15]=w[15]*w[1];
+   w[15]=w[42]-w[15];
+   w[42]=PM12p*w[15];
+   w[42]=w[44]+w[42];
+   w[42]=w[42]*w[177];
+   w[27]=-w[27]*w[182];
+   w[15]=w[15]*w[199];
+   w[15]=w[15]+w[27]+w[42];
+   w[16]=w[22]+w[16]+w[52];
+   w[16]=w[16]*w[4];
+   w[27]=w[85]*w[141];
+   w[16]=w[16]+w[87]-w[27]+w[160];
+   w[27]=-2.5E-1*w[113]+1.5625E-2*w[35]+w[218]-w[28];
+   w[27]=w[27]*w[2];
+   w[16]=2.E+0*w[16]+w[27]-w[131];
+   w[16]=w[16]*w[9];
+   w[16]=w[16]+w[34];
+   w[16]=w[16]*w[150];
+   w[27]=w[80]*w[105];
+   w[27]=w[27]+w[89];
+   w[27]=w[27]*w[3];
+   w[16]=w[16]+w[27]+w[122];
+   w[16]=w[16]*w[3];
+   w[27]=w[78]+3.333333333E-1*w[29];
+   w[27]=w[27]*w[2];
+   w[29]=w[134]*w[214];
+   w[27]=w[27]+w[29]-1.333333333E+0*w[66];
+   w[27]=w[27]*w[9];
+   w[27]=w[27]-6.666666666E-1*w[216];
+   w[27]=w[27]*w[6];
+   w[29]=w[82]*w[214];
+   w[27]=w[27]-w[29];
+   w[27]=w[27]*w[6];
+   w[29]=w[92]*w[223];
+   w[34]=w[142]*w[150];
+   w[29]=w[29]-w[34];
+   w[29]=w[29]*w[3];
+   w[34]=w[148]*w[150];
+   w[42]=w[136]*w[9];
+   w[34]=w[42]+w[34];
+   w[34]=w[34]*w[6];
+   w[29]=w[29]-w[34];
+   w[29]=w[29]*w[127];
+   w[16]=w[16]+w[27]+w[29];
+   w[16]=w[16]*w[5];
+   w[27]=w[54]+w[71];
+   w[27]=w[27]*w[215];
+   w[27]=w[27]-w[40];
+   w[27]=w[27]*w[3];
+   w[34]=w[48]-w[45];
+   w[34]=w[34]*w[2];
+   w[34]=w[34]-4.E+0*w[41];
+   w[34]=w[221]+2.E+0*w[34];
+   w[34]=w[34]*w[9];
+   w[34]=w[34]+w[216];
+   w[34]=w[34]*w[6];
+   w[40]=w[106]*w[211];
+   w[26]=w[34]+w[27]-w[40]+w[26];
+   w[16]=w[16]-3.333333333E-1*w[26];
+   w[26]=-PM12p*w[16];
+   w[27]=w[105]*w[205];
+   w[27]=w[27]-w[89];
+   w[27]=w[27]*w[3];
+   w[34]=w[70]*w[9];
+   w[40]=w[63]*w[215];
+   w[34]=w[40]-w[34];
+   w[34]=w[34]*w[6];
+   w[27]=-w[122]+w[27]+w[34];
+   w[27]=w[27]*w[3];
+   w[27]=w[27]-w[29];
+   w[27]=w[27]*w[5];
+   w[29]=w[72]*w[105];
+   w[29]=w[29]-w[53];
+   w[29]=w[29]*w[3];
+   w[27]=w[27]-w[29];
+   w[29]=-PM12Lp*w[27];
+   w[26]=w[29]+w[26];
+   w[26]=w[26]*w[177];
+   w[16]=-w[16]*w[199];
+   w[27]=-w[27]*w[182];
+   w[16]=w[16]+w[27]+w[26];
+   w[18]=-w[146]-w[18]+3.333333333E-1*w[71]+6.666666666E-1*w[30]+1.333333333E+0*w[22];
+   w[18]=w[18]*w[3];
+   w[26]=w[57]+w[51]+w[208]+w[146];
+   w[26]=w[26]*w[109];
+   w[27]=w[43]-w[189]-3.333333333E-1*w[38]+2.666666666E+0*w[45];
+   w[27]=w[27]*w[9];
+   w[29]=w[90]+w[28];
+   w[34]=w[203]+w[207]+w[29]+2.333333333E+0*w[45];
+   w[34]=w[34]*w[75];
+   w[38]=w[92]*w[3];
+   w[38]=-w[38]+3.333333333E-1*w[145];
+   w[38]=w[38]*w[3];
+   w[38]=w[38]-w[129];
+   w[38]=w[38]*w[5];
+   w[20]=w[24]-w[20]+1.666666666E+0*w[22];
+   w[20]=w[189]+w[84]+2.E+0*w[20];
+   w[20]=-w[212]-5.833333333E-1*w[35]+2.E+0*w[20];
+   w[20]=w[20]*w[6];
+   w[22]=w[55]-w[69];
+   w[22]=w[23]-3.333333333E-1*w[22];
+   w[17]=-w[17]+3.333333333E-1*w[37];
+   w[17]=w[189]+2.E+0*w[17];
+   w[17]=w[17]*w[4];
+   w[23]=w[64]+3.333333333E-1*w[61];
+   w[23]=w[23]*w[162];
+   w[17]=w[26]+w[20]+4.E+0*w[22]+w[23]+w[38]-w[27]-w[34]+w[18]+w[17];
+   w[18]=w[17]*w[5];
+   w[18]=w[18]+w[196];
+   w[20]=PM12p*w[18];
+   w[22]=w[94]*w[11];
+   w[22]=w[39]+w[22];
+   w[22]=w[22]*w[11];
+   w[23]=w[68]*w[6];
+   w[23]=w[23]+8.E+0*w[151];
+   w[24]=w[143]*w[11];
+   w[24]=w[24]+w[23];
+   w[24]=w[24]*w[6];
+   w[22]=w[24]+w[22]+2.E+0*w[155];
+   w[24]=-w[11]*w[22];
+   w[26]=w[65]+w[198];
+   w[26]=w[26]*w[11];
+   w[27]=w[205]*w[11];
+   w[34]=w[115]*w[3];
+   w[27]=w[145]+w[27]-w[34];
+   w[27]=w[27]*w[3];
+   w[34]=w[201]*w[11];
+   w[34]=w[34]-w[149];
+   w[34]=w[34]*w[6];
+   w[27]=w[34]+w[27]+w[156];
+   w[26]=w[26]+w[27];
+   w[26]=w[26]*w[3];
+   w[34]=w[123]*w[205];
+   w[37]=w[34]+w[140];
+   w[37]=w[37]*w[11];
+   w[39]=w[123]*w[144];
+   w[26]=w[26]-w[37]-w[39];
+   w[26]=w[26]*w[3];
+   w[24]=w[26]+w[24];
+   w[24]=w[24]*w[14];
+   w[26]=-w[111]+w[29]+w[209];
+   w[26]=w[26]*w[75];
+   w[29]=w[139]*w[205];
+   w[26]=w[26]-3.333333333E-1*w[188]+w[29]+w[210]+w[38]+w[154];
+   w[26]=w[26]*w[5];
+   w[29]=w[126]*w[11];
+   w[37]=w[172]*w[11];
+   w[37]=w[37]+w[159];
+   w[37]=w[37]*w[6];
+   w[38]=w[175]*w[11];
+   w[38]=w[38]+w[49];
+   w[38]=w[38]*w[3];
+   w[29]=w[37]+w[174]-w[38]+w[29];
+   w[37]=w[3]*w[29]*w[13];
+   w[24]=w[24]+w[26]-w[37]+3.333333333E-1*w[196];
+   w[26]=-PM12Lp*w[24];
+   w[20]=w[26]+w[20];
+   w[20]=w[20]*w[177];
+   w[18]=w[18]*w[199];
+   w[24]=-w[24]*w[182];
+   w[18]=w[18]+w[24]+w[20];
+   w[20]=w[29]*w[1];
+   w[24]=w[161]+w[198];
+   w[24]=w[24]*w[11];
+   w[24]=w[24]+w[27];
+   w[24]=w[24]*w[13];
+   w[20]=w[24]-w[20];
+   w[24]=-PM12Lp*w[177];
+   w[24]=-w[182]+w[24];
+   w[20]=w[20]*w[24];
+   w[17]=w[17]+w[197];
+   w[24]=-PM12p*w[177];
+   w[24]=w[24]-w[199];
+   w[17]=w[17]*w[24];
+   w[24]=-4.5E+0*w[28]-w[114]-w[91]-w[30]+1.5E+0*w[45];
+   w[24]=w[24]*w[2];
+   w[24]=w[24]-w[36];
+   w[24]=w[24]*w[6];
+   w[26]=-w[83]+5.5E+0*w[93];
+   w[26]=w[26]*w[11];
+   w[24]=w[24]-w[26]-w[101];
+   w[24]=w[24]*w[6];
+   w[24]=w[24]-w[118];
+   w[24]=w[24]*w[3];
+   w[26]=w[121]-w[132];
+   w[27]=w[147]*w[8];
+   w[26]=w[27]+4.E+0*w[26];
+   w[26]=w[26]*w[2];
+   w[28]=w[99]+w[114]+w[31];
+   w[28]=w[28]*w[120];
+   w[29]=w[123]*w[124];
+   w[26]=-w[26]+w[28]+w[29];
+   w[26]=w[26]*w[11];
+   w[28]=w[133]*w[144];
+   w[28]=w[28]+w[140];
+   w[29]=w[128]*w[2];
+   w[29]=w[29]+w[225];
+   w[30]=4.E+0*w[11];
+   w[29]=w[29]*w[30];
+   w[29]=w[29]+w[28];
+   w[29]=w[29]*w[6];
+   w[26]=w[26]+w[29];
+   w[26]=w[26]*w[6];
+   w[24]=w[24]+w[26];
+   w[24]=w[24]*w[3];
+   w[26]=8.E+0*w[32]+3.E+0*w[35];
+   w[26]=w[26]*w[2];
+   w[26]=w[26]+w[228];
+   w[26]=w[26]*w[11];
+   w[23]=w[26]-w[23];
+   w[23]=w[23]*w[6];
+   w[26]=w[74]*w[2];
+   w[26]=-w[26]+8.E+0*w[60];
+   w[26]=w[26]*w[2];
+   w[29]=w[98]*w[47];
+   w[30]=w[162]*w[35];
+   w[30]=w[30]-w[225];
+   w[31]=2.E+0*w[11];
+   w[30]=w[30]*w[31];
+   w[26]=w[26]+w[30]-w[29];
+   w[26]=w[26]*w[11];
+   w[26]=w[26]+w[155];
+   w[23]=-w[23]+2.E+0*w[26];
+   w[23]=w[23]*w[6];
+   w[26]=-8.E+0*w[86]+3.E+0*w[178];
+   w[26]=w[26]*w[2];
+   w[29]=w[81]*w[184];
+   w[29]=w[29]+w[225];
+   w[29]=w[29]*w[167];
+   w[26]=w[26]-w[29];
+   w[26]=w[26]*w[11];
+   w[29]=w[77]*w[109];
+   w[29]=w[29]-w[187];
+   w[29]=w[29]*w[2];
+   w[29]=w[29]-w[102];
+   w[29]=w[29]*w[9];
+   w[30]=w[108]*w[96];
+   w[30]=-w[30]+3.E+0*w[112];
+   w[30]=w[30]*w[184];
+   w[26]=w[26]+w[29]+w[30];
+   w[26]=w[26]*w[11];
+   w[23]=w[23]+w[26];
+   w[23]=w[23]*w[6];
+   w[26]=w[137]*w[97];
+   w[23]=w[24]+w[23]+w[26];
+   w[23]=w[23]*w[14];
+   w[24]=w[50]*w[6];
+   w[24]=w[24]+w[59];
+   w[24]=w[24]*w[6];
+   w[29]=w[104]*w[125];
+   w[24]=w[24]+w[29];
+   w[24]=w[24]*w[5];
+   w[29]=w[58]*w[8];
+   w[29]=w[29]+w[166];
+   w[30]=w[128]+w[78];
+   w[30]=w[30]*w[214];
+   w[25]=w[25]*w[150];
+   w[27]=-w[27]+w[25]+w[30]+1.333333333E+0*w[29];
+   w[27]=w[27]*w[6];
+   w[29]=w[124]*w[6];
+   w[29]=w[29]-w[88];
+   w[29]=w[29]*w[139];
+   w[27]=w[27]-w[29]+w[67]-w[24];
+   w[27]=w[27]*w[5];
+   w[29]=w[73]*w[3];
+   w[30]=w[164]*w[127];
+   w[29]=w[29]+w[30];
+   w[29]=w[29]*w[13];
+   w[23]=w[23]+w[27]+w[29]+w[190];
+   w[27]=-PM12p*w[23];
+   w[29]=w[202]+w[65];
+   w[29]=w[29]*w[130];
+   w[29]=w[29]+w[206];
+   w[29]=w[29]*w[3];
+   w[28]=w[28]+w[34];
+   w[28]=w[28]*w[130];
+   w[28]=w[29]-w[28];
+   w[28]=w[28]*w[3];
+   w[22]=w[22]*w[130];
+   w[22]=w[28]-w[22]-w[26];
+   w[22]=w[22]*w[14];
+   w[26]=w[173]*w[3];
+   w[26]=w[26]+w[30];
+   w[26]=w[26]*w[13];
+   w[19]=w[25]-w[19];
+   w[19]=w[19]*w[6];
+   w[19]=w[19]+w[24]-w[79];
+   w[19]=w[19]*w[5];
+   w[19]=w[22]+w[19]-w[26];
+   w[22]=-PM12Lp*w[19];
+   w[22]=w[22]+w[27];
+   w[22]=w[22]*w[177];
+   w[23]=-w[23]*w[199];
+   w[19]=-w[19]*w[182];
+   w[19]=w[23]+w[19]+w[22];
+
+
+K31[SI_K31(ip,izp,0,iq,izq,0)] += wj * FCtr * w[19];
+K31[SI_K31(ip,izp,0,iq,izq,1)] += wj * FCtr * w[21];
+K31[SI_K31(ip,izp,0,iq,izq,2)] += wj * FCtr * w[18];
+K31[SI_K31(ip,izp,1,iq,izq,0)] += wj * FCtr * w[76];
+K31[SI_K31(ip,izp,1,iq,izq,1)] += wj * FCtr * w[15];
+K31[SI_K31(ip,izp,1,iq,izq,2)] += wj * FCtr * w[20];
+K31[SI_K31(ip,izp,2,iq,izq,0)] += wj * FCtr * w[33];
+K31[SI_K31(ip,izp,2,iq,izq,1)] += wj * FCtr * w[16];
+K31[SI_K31(ip,izp,2,iq,izq,2)] += wj * FCtr * w[17];
